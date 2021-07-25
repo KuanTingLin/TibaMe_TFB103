@@ -1,5 +1,7 @@
 import logging.config
-
+from util import jieba_test
+from util.jieba_test import correct_cut
+from pythonProject import main
 
 def test_logging(logger_=None):
     if logger_:
@@ -45,15 +47,19 @@ def count_rotate_logger():
 
 
 def main():
-    logger = basic_config()
+    # logger = basic_config()
     # logger = basic_config_with_format()
     # logger = using_logger()
-    test_logging(logger)
+    # test_logging(logger)
 
     # logging.config.fileConfig('logging.conf')
     # logger = time_rotate_logger()
     # logger = count_rotate_logger()
     # test_logging(logger)
+
+    datas = ["NIKON D780 單機身 公司貨", "3M 瞬涼5度抑螨可水洗烘乾涼夏兩用被-星空藍(180x210cm)"]
+    for data in datas:
+        print("correct: ", correct_cut(data))
 
 
 if __name__ == '__main__':

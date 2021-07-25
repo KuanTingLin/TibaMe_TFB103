@@ -1,4 +1,4 @@
-from util.jieba_test import paddle_cut, correct_cut, full_cut
+from util.jieba_test import correct_cut, full_cut
 import threading
 
 
@@ -13,7 +13,7 @@ def main():
                                    args=(data,))
         thread1.start()
         thread2.start()
-        print(data)
+        # print(data)
 
 
 if __name__ == "__main__":
